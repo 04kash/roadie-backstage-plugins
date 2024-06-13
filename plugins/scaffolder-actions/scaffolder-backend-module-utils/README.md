@@ -6,16 +6,29 @@ Welcome to the roadie `utils` actions for the `scaffolder-backend`.
 
 This contains a collection of actions to use in scaffolder templates:
 
-- [Zip](#zip)
-- [Sleep](#sleep)
-- [Deserialise a file](#deserialise)
-- [Serialise to JSON or YAML](#serialise)
-- [Parse and Transform JSON or YAML](#parse-and-transform-json-or-yaml)
-- [Merge new data into an existing JSON file](#merge-json)
-- [Merge](#merge)
-- [Append content to a file](#append)
-- [Write content to a file](#write-to-file)
-- [Replace in files](#replace-in-files)
+- [scaffolder-backend-module-utils actions package](#scaffolder-backend-module-utils-actions-package)
+  - [Intro](#intro)
+  - [Setup](#setup)
+  - [Setting up Backstage](#setting-up-backstage)
+    - [Installing the actions](#installing-the-actions)
+    - [New backend system](#new-backend-system)
+  - [From your Backstage root directory](#from-your-backstage-root-directory)
+  - [Actions:](#actions)
+    - [Zip](#zip)
+    - [Sleep](#sleep)
+    - [Deserialise](#deserialise)
+    - [Serialise to JSON or YAML](#serialise-to-json-or-yaml)
+      - [To yaml:](#to-yaml)
+      - [To JSON:](#to-json)
+    - [Parse and Transform JSON or YAML](#parse-and-transform-json-or-yaml)
+    - [Merge JSON](#merge-json)
+      - [Example Merge JSON template using an object input](#example-merge-json-template-using-an-object-input)
+      - [Example Merge JSON template using string input](#example-merge-json-template-using-string-input)
+    - [Merge](#merge)
+    - [Append](#append)
+    - [Write to File](#write-to-file)
+      - [Example template](#example-template)
+    - [Replace in files](#replace-in-files)
 
 ## Setup
 
@@ -199,7 +212,7 @@ spec:
       name: sleep
       action: roadiehq:utils:sleep
       input:
-        path: ${{ parameters.amount }}
+        amount: ${{ parameters.amount }}
 ```
 
 ### Deserialise
